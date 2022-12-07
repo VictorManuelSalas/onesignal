@@ -1,0 +1,7 @@
+{
+  "name": "onesignal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
