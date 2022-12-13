@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Calculadora Simple
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,20 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">------Calcular-----</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="resultado">
+    <h1 id="resultado"></h1>
   </div>
+  <div id="container">
+    <input type="number" name="one" id="one">
+    <input type="text" name="simbolo" id="simbolo">
+    <input type="number" name="two" id="two">
+  </div>
+  <input (click)="Calcular()" type="button" value="Calcular" id="btn">
+
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,96L40,96C80,96,160,96,240,106.7C320,117,400,139,480,154.7C560,171,640,181,720,176C800,171,880,149,960,149.3C1040,149,1120,171,1200,181.3C1280,192,1360,192,1400,192L1440,192L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 </ion-content>
