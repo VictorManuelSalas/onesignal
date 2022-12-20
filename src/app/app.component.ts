@@ -7,7 +7,7 @@ import OneSignal from 'onesignal-cordova-plugin';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  signal_app_id = '41740cf0-fdcb-4d6b-8ea0-d96fb5431d9c';
+  signal_app_id = '8d1620a0-bc08-4ab2-9a79-3ffb5aee82a6';
   firebase_id = '135841084689';
 
   constructor(/*private oneSignal: OneSignal*/) {
