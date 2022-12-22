@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { stringify } from 'querystring';
+import { PushService } from '../services/push.service';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +9,9 @@ import { stringify } from 'querystring';
 })
 export class HomePage {
 
-  constructor() { }
+  constructor(public puchService: PushService) { }
 
+  /*
   ngInit() {
 
   }
@@ -45,5 +47,5 @@ export class HomePage {
         break;
     }
 
-  }
+  } */
 }
