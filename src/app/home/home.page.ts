@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { stringify } from 'querystring';
+import { Component , OnInit} from '@angular/core';
 import { PushService } from '../services/push.service';
 
 @Component({
@@ -9,7 +8,20 @@ import { PushService } from '../services/push.service';
 })
 export class HomePage {
 
-  constructor(public puchService: PushService) { }
+  constructor(public puchService: PushService) {
+    localStorage.setItem(this.correo, 'salasmanuel030@gmail.com ');
+    this.myItem = localStorage.getItem(this.correo);
+   }
+
+  correo : string = 'email completo';
+  dato: any;
+
+  key: string = 'Name';
+  myItem : any;
+  storeName() {
+    localStorage.setItem(this.key, 'Angular');
+    this.myItem = localStorage.getItem(this.key);
+  }
 
   /*
   ngInit() {

@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import { OneSignal, OSNotificationPayload } from '@awesome-cordova-plugins/onesignal/ngx';
 import { Storage } from '@ionic/storage-angular';
-import OSNotification from 'onesignal-cordova-plugin/dist/OSNotification';
-import { EventEmitter } from 'stream';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PushService {
 
-  mensajes: OSNotificationPayload[] = [
+  mensajes: any[] = [
    // {
    //   title: 'Titulo de la push',
    //   body: 'Body de la push',
@@ -18,7 +16,6 @@ export class PushService {
   ];
 
 
-  pushListener = new EventEmitter();
 
   signal_app_id = '8d1620a0-bc08-4ab2-9a79-3ffb5aee82a6';
   firebase_id = '135841084689';
@@ -63,17 +60,16 @@ export class PushService {
       return;
     }
     this.mensajes.unshift( payload );
-    this.pushListener.emit(payload);
 
     this.guardarMensajes();
     
   }
 
-  guardarMensajes(){
-    this.storage.set('notificacion', this.mensajes);
+   async guardarMensajes(){
+    await localStorage.setItem('notificacion', JSON.stringify(this.mensajes));
   }
 
    async cargarMensajes(){
-    this.mensajes =  await this.storage.get('notificacion') || [];
+     await localStorage.getItem('notificacion') || [];
   }
 }

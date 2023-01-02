@@ -14,7 +14,7 @@ import { PushService } from './services/push.service';
 
 
 @NgModule({
-  declarations: [AppComponent, PushService],
+  declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot()],
   providers: [OneSignal,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent],

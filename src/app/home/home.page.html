@@ -11,14 +11,17 @@
     <ion-list-header>
       <ion-label>Bandeja de Entrada 😋</ion-label>
     </ion-list-header>
-
+    <p>{{myItem}}</p>
+    <p>{{dato}}</p>
+    <button (click)="storeName()">Click to store name</button>
+ 
     <ion-item *ngFor="let push of puchService.mensajes">
       <ion-label>
         <h2>{{ push.title }}</h2>
         <p>{{ push.body }}</p>
         <p>{{ push.additionalData | json }}</p>
 
-        <ion-note>{{ push.date }}</ion-note>
+      <ion-note>{{ push.date }}</ion-note>
         
       </ion-label>
     </ion-item>
