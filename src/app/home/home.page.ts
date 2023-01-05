@@ -14,8 +14,9 @@ export class HomePage {
    }
 
   correo : string = 'email completo';
-  dato: any;
+  
 
+  datos = this.puchService.dato;
   key: string = 'Name';
   myItem : any;
   storeName() {

@@ -8,11 +8,11 @@ import { Storage } from '@ionic/storage-angular';
 export class PushService {
 
   mensajes: any[] = [
-   // {
-   //   title: 'Titulo de la push',
-   //   body: 'Body de la push',
-   //   date: new Date()
-   // }
+   {
+     title: 'Titulo de la push',
+     body: 'Body de la push',
+     date: new Date()
+   }
   ];
 
 
@@ -21,13 +21,14 @@ export class PushService {
   firebase_id = '135841084689';
 
   constructor(private oneSignal: OneSignal, private storage: Storage) { 
-    this.cargarMensajes();
+    //this.cargarMensajes();
   }
 
-  async getMensajes(){
+ /* async getMensajes(){
     await this.cargarMensajes();
     return [...this.mensajes];
   }
+  */
 
 
   configInicial() {
@@ -37,8 +38,9 @@ export class PushService {
 
     this.oneSignal.handleNotificationReceived().subscribe((data) => {
       // do something when notification is received
-      alert(data)
-      this.notificacionRecibida( data );
+      alert(data);
+      this.datos(data);
+      
     });
 
     this.oneSignal.handleNotificationOpened().subscribe((info) => {
@@ -49,6 +51,11 @@ export class PushService {
     this.oneSignal.endInit();
   }
 
+  dato = '';
+  async datos(data:any) {
+    this.dato = await typeof(data);
+  }
+/*
   async notificacionRecibida(data: any){
 
     await this.cargarMensajes(); 
@@ -72,4 +79,5 @@ export class PushService {
    async cargarMensajes(){
      await localStorage.getItem('notificacion') || [];
   }
+  */
 }
